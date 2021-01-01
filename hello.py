@@ -68,4 +68,29 @@ else :
 
 print('========================')
 
+aStr = 'hello bob'
+try:
+    ival = int(aStr)
+except :
+    ival = -1
+print(ival)
 
+bStr = '123'
+try:
+    ival = int(bStr)
+except :
+    ival = -1
+print(ival)
+
+print('========================')
+
+rawstr = input('Enter a number: ')
+try : 
+    ival = int(rawstr)
+except :
+    ival = -1
+
+if ival > 0 :
+    print('Nice work')
+else : 
+    print('Not a number')
