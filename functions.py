@@ -33,14 +33,16 @@ print('>>> Greet in different languages: ')
 
 
 def greet(lang):
+    greeting = ''
     if lang == 'es':
-        format_input('Hola')
+        greeting = 'Hola'
     elif lang == 'fr':
-        format_input('Bonjour')
+        greeting = 'Bonjour'
     else:
-        format_input('Hello')
+        greeting = 'Hello'
+    return greeting
 
 
-greet('en')
-greet('es')
-greet('fr')
+format_input(greet('en') + " USA")
+format_input(greet('es') + " MEXICO")
+format_input(greet('fr') + " FRANCE")
