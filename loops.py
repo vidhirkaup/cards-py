@@ -33,3 +33,42 @@ friends = ['Adam', 'Bob', 'Charles']
 for friend in friends:
     print('Hello ', friend)
 print('Done')
+
+print()
+print('>>> Find largest number in a list: ')
+
+largest = -1
+numbers = [9, 41, 12, 3, 74, 15]
+for number in numbers:
+    if number > largest:
+        largest = number
+    print('current max = ', largest)
+print('------')
+print('max = ', largest)
+print()
+
+count = 0
+for number in numbers:
+    count = count + 1
+    print('current count = ', count)
+print('------')
+print('total count = ', count)
+print()
+
+sum = 0
+for number in numbers:
+    sum = sum + number
+    print('running sum = ', sum)
+print('------')
+print('final sum = ', sum)
+
+count = 0
+sum = 0
+avg = 0
+for number in numbers:
+    sum = sum + number
+    count = count + 1
+    print('current count = ', count)
+    print('running sum = ', sum)
+print('------')
+print('avg = ', sum / count)
