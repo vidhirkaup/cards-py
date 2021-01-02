@@ -86,3 +86,24 @@ for number in numbers:
     print(count, sum)
 print('------')
 print('avg = ', sum / count)
+
+print()
+print('>>> Looping through strings: ')
+
+word = 'banana'
+index = 0
+while index < len(word):
+    letter = word[index]
+    print(index, letter)
+    index = index + 1
+
+print()
+for letter in word:
+    print(letter)
+
+print()
+count = 0
+for letter in word:
+    if letter == 'a':
+        count = count + 1
+print('count(a) = ', count)
