@@ -1,4 +1,7 @@
-# Prints hello world
+print()
+print('>>> Prints hello world: ')
+
+
 def hello():
     print('------')
     print('hello')
@@ -10,8 +13,10 @@ hello()
 print('zip')
 hello()
 
+print()
+print('>>> Prints input within parenthesis: ')
 
-# Prints input within parenthesis
+
 def format_input(instr):
     print('-------------')
     print('[', instr, ']')
@@ -23,8 +28,10 @@ format_input(big)
 small = min('Hello World')
 format_input(small)
 
+print()
+print('>>> Greet in different languages: ')
 
-# Print hello
+
 def greet(lang):
     if lang == 'es':
         format_input('Hola')
