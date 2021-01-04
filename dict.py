@@ -60,6 +60,40 @@ sorted_word_counter = sorted(word_counter.items())
 print(sorted_word_counter)
 
 print()
-print('print in sorted order')
+print('print in sorted order of keys')
 for k, v in sorted(word_counter.items()):
     print(k, v)
+
+print()
+print('print in sorted order of values')
+word_list = list()
+for k, v in word_counter.items():
+    word_list.append((v, k))
+print(word_list)
+
+word_list = sorted(word_list, reverse=True)
+print(word_list)
+
+print()
+print('>>> print top 10 most common words in a file')
+fhandle = open('romeo.txt')
+words = list()
+words_dict = dict()
+for line in fhandle:
+    # print(line)
+    words = line.split()
+    for word in words:
+        words_dict[word] = words_dict.get(word, 0) + 1
+# print(words_dict)
+
+words_list = list()
+for k,v in words_dict.items():
+    words_list.append((v, k))
+# print(words_list)
+
+words_list = sorted(words_list, reverse=True)
+for v, k in words_list[:10]:
+    print(k, v)
+
+
+
