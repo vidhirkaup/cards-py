@@ -40,14 +40,14 @@ for line in fhandle:
 print(word_counter)
 print()
 
-for key in word_counter:
-    print(key, word_counter[key])
+# for key in word_counter:
+#     print(key, word_counter[key])
 
 print()
 count = -1
 word = None
 for k, v in word_counter.items():
-    print(k, v)
+    # print(k, v)
     if v > count:
         count = v
         word = k
@@ -61,18 +61,18 @@ print(sorted_word_counter)
 
 print()
 print('print in sorted order of keys')
-for k, v in sorted(word_counter.items()):
-    print(k, v)
+# for k, v in sorted(word_counter.items()):
+#     print(k, v)
 
 print()
 print('print in sorted order of values')
 word_list = list()
 for k, v in word_counter.items():
     word_list.append((v, k))
-print(word_list)
+print(word_list[:5])
 
 word_list = sorted(word_list, reverse=True)
-print(word_list)
+print(word_list[:5])
 
 print()
 print('>>> print top 10 most common words in a file')
@@ -84,16 +84,15 @@ for line in fhandle:
     words = line.split()
     for word in words:
         words_dict[word] = words_dict.get(word, 0) + 1
-# print(words_dict)
+print(words_dict)
 
 words_list = list()
 for k,v in words_dict.items():
     words_list.append((v, k))
-# print(words_list)
+print(words_list[:5])
 
 words_list = sorted(words_list, reverse=True)
 for v, k in words_list[:10]:
     print(k, v)
 
-
-
+# print(sorted([(v, k) for k, v in words_dict.items()], reverse=True)[:10])
