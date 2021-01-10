@@ -40,3 +40,14 @@ for line in handle:
     if len(domain) > 0:
         domains[domain[0]] = domains.get(domain[0], 0) + 1
 print(domains)
+
+print('-----------------------------')
+handle = open('mbox-short.txt')
+confidenceList = list()
+for line in handle:
+    confidence = re.findall('^X-DSPAM-Confidence: ([0-9.]+)', line)
+    if (len(confidence) > 0):
+        confidenceList.append(float(confidence[0]))
+confidenceList.sort()
+print(confidenceList)
+print(max(confidenceList))
