@@ -31,3 +31,12 @@ for line in handle:
         print(line)
         lines.append(line)
 print(len(lines))
+
+print('-----------------------------')
+domains = dict()
+handle = open('mbox-short.txt')
+for line in handle:
+    domain = re.findall('^From .*@([\S]*)[^>]', line)
+    if len(domain) > 0:
+        domains[domain[0]] = domains.get(domain[0], 0) + 1
+print(domains)
