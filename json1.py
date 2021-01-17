@@ -17,8 +17,8 @@ print('Attr: hide=', info["email"]["hide"])
 
 print()
 
-users = '''{
-    "users": [
+users = '''
+    [
         {
             "id": "101",
             "name": "Adam",
@@ -36,12 +36,11 @@ users = '''{
             }
         }
     ]
-}'''
+'''
 
-dir = json.loads(users)
-userList = dir["users"]
+userList = json.loads(users)
 print('count(users): ', len(userList))
-
+print('----------')
 for user in userList:
     print('user.id: ', user['id'])
     print('user.name: ', user['name'])
