@@ -1,0 +1,43 @@
+{
+  "coord": {
+    "lon": -79.7663,
+    "lat": 43.6834
+  },
+  "weather": [
+    {
+      "id": 803,
+      "main": "Clouds",
+      "description": "broken clouds",
+      "icon": "04n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 271.07,
+    "feels_like": 265.66,
+    "temp_min": 270.37,
+    "temp_max": 272.04,
+    "pressure": 1016,
+    "humidity": 64
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 3.6,
+    "deg": 260
+  },
+  "clouds": {
+    "all": 75
+  },
+  "dt": 1611108633,
+  "sys": {
+    "type": 1,
+    "id": 1002,
+    "country": "CA",
+    "sunrise": 1611060418,
+    "sunset": 1611094345
+  },
+  "timezone": -18000,
+  "id": 5907364,
+  "name": "Brampton",
+  "cod": 200
+}
