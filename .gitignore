@@ -139,3 +139,7 @@ cython_debug/
 
 # PyCharm
 .idea/
+
+# ignore db files
+*.db
+*.sqlite
