@@ -47,16 +47,18 @@ if load_weather == 'Y':
             temp_min REAL,
             temp_max REAL,
             pressure REAL,
-            humidity REAL
+            humidity REAL,
+            dt INTEGER
         )
     ''')
 
 country_cities = input('which country do you want to see? ')
 appId = input('Enter key: ')
 
-cur.execute('SELECT * FROM city where country = ?', (country_cities,))
-city_list = cur.fetchmany(2)
-print(city_list)
+# cur.execute('SELECT * FROM city where country = ?', (country_cities,))
+cur.execute('SELECT * FROM city')
+city_list = cur.fetchall()
+# print(city_list)
 
 basepath = 'http://api.openweathermap.org/data/2.5/weather?'
 for city in city_list:
@@ -70,5 +72,13 @@ for city in city_list:
 
     url = basepath + urllib.parse.urlencode(params)
     print('Invoke: ', url)
+    urlhandle = urllib.request.urlopen(url)
+    data = urlhandle.read().decode()
+    js = json.loads(data)
+    cur.execute(
+        'INSERT INTO WEATHER (city_id, temp, feels_like, temp_min, temp_max, pressure, humidity, dt) VALUES (?,?,?,?,?,?,?,?)',
+        (city[1], js['main']['temp'], js['main']['feels_like'], js['main']['temp_min'], js['main']['temp_max'],
+         js['main']['pressure'], js['main']['humidity'], js['dt'])
+    )
+    conn.commit()
 
-# urlhandle = urllib.request.urlopen(url)
